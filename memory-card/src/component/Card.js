@@ -5,20 +5,26 @@ import ScoreBoard from './ScoreBoard';
 export default function Card({ description, image, imageAlt }) {
   const [alreadyChosen, setAlreadyChosen] = useState(false);
 
-  function Randomizer() {
-    setAlreadyChosen(true);
-    const layout = document.getElementById('layout');
-    const childNodes = layout.childNodes;
-    layout.append(childNodes[0]);
-    layout.append(childNodes[2]);
-    // layout.append(childNodes[0]);
-    layout.append(childNodes[2]);
-  }
+  let updateScore = false;
 
-  ScoreBoard(1);
+  // function Randomizer() {
+  //   setAlreadyChosen(true);
+  // const layout = document.getElementById('layout');
+  // const childNodes = layout.childNodes;
+  // layout.append(childNodes[0]);
+  // layout.append(childNodes[2]);
+  // layout.append(childNodes[0]);
+  // layout.append(childNodes[1]);
+  // updateScore = true;
+  // return updateScore;
+  // }
+  // console.log(updateScore);
+  // ScoreBoard(updateScore);
+  // updateScore = true;
+  // console.log(updateScore);
 
   return (
-    <div className="card" onClick={Randomizer}>
+    <div className="cards">
       <img src={image} alt={imageAlt} />
       <p>{description}</p>
     </div>
