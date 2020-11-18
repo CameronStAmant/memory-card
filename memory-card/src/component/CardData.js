@@ -3,6 +3,7 @@ export const card1 = {
   imageAlt: 'image-1',
   description: 'item 1',
   chosen: false,
+  className: 'card',
 };
 
 export const card2 = {
@@ -10,6 +11,7 @@ export const card2 = {
   imageAlt: 'image-2',
   description: 'item 2',
   chosen: false,
+  className: 'card',
 };
 
 export const card3 = {
@@ -17,6 +19,7 @@ export const card3 = {
   imageAlt: 'image-3',
   description: 'item 3',
   chosen: false,
+  className: 'card',
 };
 
 export const card4 = {
@@ -24,4 +27,5 @@ export const card4 = {
   imageAlt: 'image-4',
   description: 'item 4',
   chosen: false,
+  className: 'card',
 };
