@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Card.css';
-import ScoreBoard from './ScoreBoard';
+// import ScoreBoard from './ScoreBoard';
 
 export default function Card({ description, image, imageAlt }) {
-  const [alreadyChosen, setAlreadyChosen] = useState(false);
+  // const [alreadyChosen, setAlreadyChosen] = useState(false);
 
-  let updateScore = false;
+  // let updateScore = false;
 
   // function Randomizer() {
   //   setAlreadyChosen(true);
