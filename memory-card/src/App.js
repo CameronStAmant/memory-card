@@ -1,7 +1,7 @@
 import './App.css';
 import Card from './component/Card';
 import { card1, card2, card3, card4 } from './component/CardData';
-import ScoreBoard from './component/ScoreBoard';
+import { ScoreBoard } from './component/ScoreBoard';
 
 function App() {
   return (
