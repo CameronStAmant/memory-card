@@ -18,7 +18,6 @@ function ScoreBoard() {
   const increaseScores = () => {
     setScore((score) => score + 1);
     console.log('------');
-    const results = score + 1;
     console.log(score);
     console.log(bestScore);
     // if (bestScore < score) {
