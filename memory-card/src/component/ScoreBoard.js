@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 export default function ScoreBoard() {
-  const [score, setScore] = useState(1);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     function updateScoreOnClick() {
-      console.log('hi');
       setScore((score) => score + 1);
     }
     const addEvents = document.getElementsByClassName('cards');
