@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
 export default function ScoreBoard() {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(1);
 
   useEffect(() => {
-    const updateScoreOnClick = () => {
-      setScore(score + 1);
-    };
+    function updateScoreOnClick() {
+      console.log('hi');
+      setScore((score) => score + 1);
+    }
     const addEvents = document.getElementsByClassName('cards');
-    console.log(addEvents.length);
     const cardArray = Array.from(addEvents);
 
     cardArray.forEach((element) => {
-      element.addEventListener('click', updateScoreOnClick);
+      if (element.getAttribute('events') === 'false') {
+        element.addEventListener('click', updateScoreOnClick);
+        element.setAttribute('events', 'true');
+      }
     });
   }, [score]);
 

@@ -2,10 +2,8 @@ import React from 'react';
 import './Card.css';
 // import ScoreBoard from './ScoreBoard';
 
-export default function Card({ description, image, imageAlt }) {
+export default function Card({ description, image, imageAlt, events }) {
   // const [alreadyChosen, setAlreadyChosen] = useState(false);
-
-  // let updateScore = false;
 
   // function Randomizer() {
   //   setAlreadyChosen(true);
@@ -15,16 +13,9 @@ export default function Card({ description, image, imageAlt }) {
   // layout.append(childNodes[2]);
   // layout.append(childNodes[0]);
   // layout.append(childNodes[1]);
-  // updateScore = true;
-  // return updateScore;
-  // }
-  // console.log(updateScore);
-  // ScoreBoard(updateScore);
-  // updateScore = true;
-  // console.log(updateScore);
 
   return (
-    <div className="cards">
+    <div className="cards" events={events}>
       <img src={image} alt={imageAlt} />
       <p>{description}</p>
     </div>

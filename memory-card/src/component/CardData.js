@@ -4,6 +4,7 @@ export const card1 = {
   description: 'item 1',
   chosen: false,
   className: 'card',
+  events: 'false',
 };
 
 export const card2 = {
@@ -12,6 +13,7 @@ export const card2 = {
   description: 'item 2',
   chosen: false,
   className: 'card',
+  events: 'false',
 };
 
 export const card3 = {
@@ -20,6 +22,7 @@ export const card3 = {
   description: 'item 3',
   chosen: false,
   className: 'card',
+  events: 'false',
 };
 
 export const card4 = {
@@ -28,4 +31,5 @@ export const card4 = {
   description: 'item 4',
   chosen: false,
   className: 'card',
+  events: 'false',
 };
