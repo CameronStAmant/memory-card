@@ -10,7 +10,7 @@ export default function Card({ description, image, imageAlt, events }) {
     const childNodes = layout.childNodes;
     const numberOfCards = [...Array(childNodes.length).keys()];
     numberOfCards.forEach((element) => {
-      // childNodes[element].style.display = 'none';
+      childNodes[element].style.display = 'none';
     });
   };
 

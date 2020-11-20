@@ -6,6 +6,13 @@ function ScoreBoard() {
 
   const reset = () => {
     setScore(0);
+
+    const layout = document.getElementById('layout');
+    const childNodes = layout.childNodes;
+    const numberOfCards = [...Array(childNodes.length).keys()];
+    numberOfCards.forEach((element) => {
+      childNodes[element].style.display = 'inline';
+    });
   };
 
   let ResetButton;
@@ -15,30 +22,22 @@ function ScoreBoard() {
     </button>
   );
 
-  const increaseScores = () => {
-    setScore((score) => score + 1);
-    console.log('------');
-    console.log(score);
-    console.log(bestScore);
-    // if (bestScore < score) {
-    setBestScore((bestScore) => bestScore + 1);
-    // }
-  };
-
   useEffect(() => {
     function updateScoreOnClick() {
-      increaseScores();
+      setScore((score) => score + 1);
     }
     const addEvents = document.getElementsByClassName('cards');
     const cardArray = Array.from(addEvents);
-
+    if (bestScore < score) {
+      setBestScore(bestScore + 1);
+    }
     cardArray.forEach((element) => {
       if (element.getAttribute('events') === 'false') {
         element.addEventListener('click', updateScoreOnClick);
         element.setAttribute('events', 'true');
       }
     });
-  });
+  }, [score, bestScore]);
 
   return (
     <div>
