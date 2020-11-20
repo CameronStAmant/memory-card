@@ -3,15 +3,28 @@ import './Card.css';
 
 export default function Card({ description, image, imageAlt, events }) {
   const [alreadyChosen, setAlreadyChosen] = useState(false);
+
+  const resetCards = () => {
+    const layout2 = document.getElementById('layout');
+    const childNodes2 = layout2.childNodes;
+    const nodeArr = [Array.from(childNodes2)];
+    const numberOfCards2 = [...Array(childNodes2.length).keys()];
+    // setAlreadyChosen(false);
+    nodeArr.forEach((element) => {
+      console.log(element);
+    });
+  };
+
   const gameReset = () => {
     console.log('game over');
 
     const layout = document.getElementById('layout');
     const childNodes = layout.childNodes;
     const numberOfCards = [...Array(childNodes.length).keys()];
-    numberOfCards.forEach((element) => {
-      childNodes[element].style.display = 'none';
-    });
+    // numberOfCards.forEach((element) => {
+    //   childNodes[element].style.display = 'none';
+    // });
+    resetCards();
   };
 
   const shuffle = (array) => {
