@@ -4,15 +4,6 @@ import Card from './Card';
 import './CardDeck.css';
 
 export default function CardDeck(props) {
-  // const [alreadyChosen, setAlreadyChosen] = useState(false);
-
-  // const randomizer = () => {
-  //   setAlreadyChosen(true);
-
-  //   if (alreadyChosen === true) {
-  //     gameReset();
-  //   }
-  // };
   const deck = [card1, card2, card3, card4];
   const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -23,12 +14,16 @@ export default function CardDeck(props) {
   };
 
   const displayCards = shuffle(deck).map((id, index) => {
-    return <Card {...id} key={index} />;
+    return (
+      <Card
+        {...id}
+        index={id.id}
+        key={index}
+        onClick={props.onClick}
+        selected={props.selected}
+      />
+    );
   });
 
-  return (
-    <div id="layout" onClick={props.onClick}>
-      {displayCards}
-    </div>
-  );
+  return <div id="layout">{displayCards}</div>;
 }
