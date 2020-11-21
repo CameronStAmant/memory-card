@@ -3,8 +3,8 @@ import './Card.css';
 
 function Card(props) {
   const clicked = () => {
-    props.selected(props.index);
     props.onClick();
+    props.selected(props.index);
   };
   return (
     <div className="cards" onClick={clicked}>

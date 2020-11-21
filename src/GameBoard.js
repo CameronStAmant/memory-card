@@ -12,13 +12,19 @@ function GameBoard() {
     const length = new Array(selected.length);
     setSelected(length.fill(false, 0));
     setScore(0);
+    setBestScore((bestScore) => bestScore - 1);
     return;
   };
 
   const updateSelected = (index) => {
     const selectedArray = selected;
-    selectedArray[index] = true;
-    setSelected(selectedArray);
+    if (selectedArray[index] === true) {
+      alert('game over');
+      restart();
+    } else {
+      selectedArray[index] = true;
+      setSelected(selectedArray);
+    }
   };
 
   const updateScore = () => {
@@ -31,11 +37,7 @@ function GameBoard() {
   return (
     <div>
       <ScoreBoard score={score} bestScore={bestScore} />
-      <Reset
-        score={score}
-        onClick={(value) => setScore(value)}
-        reset={restart}
-      />
+      <Reset score={score} reset={restart} />
       <CardDeck
         onClick={updateScore}
         selected={(index) => updateSelected(index)}
