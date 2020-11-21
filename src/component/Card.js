@@ -2,8 +2,6 @@ import React from 'react';
 import './Card.css';
 
 function Card(props) {
-  console.log(props.selected);
-
   const clicked = () => {
     props.selected(props.index);
     props.onClick();
