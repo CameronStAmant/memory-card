@@ -19,7 +19,7 @@ function GameBoard() {
   const updateSelected = (index) => {
     const selectedArray = selected;
     if (selectedArray[index] === true) {
-      alert('game over');
+      alert('Game over. Looks like that color was chosen already.');
       restart();
     } else {
       selectedArray[index] = true;

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Reset.css';
 
 export default function Reset(props) {
   const resetter = () => {
@@ -6,7 +7,7 @@ export default function Reset(props) {
   };
 
   return (
-    <div>
+    <div id="reset">
       <button onClick={resetter}>Restart</button>
     </div>
   );

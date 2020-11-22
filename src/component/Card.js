@@ -9,7 +9,6 @@ function Card(props) {
   return (
     <div className="cards" onClick={clicked}>
       <img src={props.image} alt={props.imageAlt} />
-      <p>{props.description}</p>
     </div>
   );
 }
