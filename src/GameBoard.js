@@ -6,7 +6,38 @@ import Reset from './component/Reset';
 function GameBoard() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [selected, setSelected] = useState([false, false, false, false]);
+  const [selected, setSelected] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   const restart = () => {
     const length = new Array(selected.length);
