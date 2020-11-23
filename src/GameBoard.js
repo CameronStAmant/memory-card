@@ -43,7 +43,6 @@ function GameBoard() {
     const length = new Array(selected.length);
     setSelected(length.fill(false, 0));
     setScore(0);
-    setBestScore((bestScore) => bestScore - 1);
     return;
   };
 
@@ -53,15 +52,12 @@ function GameBoard() {
       alert('Game over. Looks like that color was chosen already.');
       restart();
     } else {
+      setScore((score) => score + 1);
+      if (bestScore <= score) {
+        setBestScore((bestScore) => bestScore + 1);
+      }
       selectedArray[index] = true;
       setSelected(selectedArray);
-    }
-  };
-
-  const updateScore = () => {
-    setScore((score) => score + 1);
-    if (bestScore <= score) {
-      setBestScore((bestScore) => bestScore + 1);
     }
   };
 
@@ -69,10 +65,7 @@ function GameBoard() {
     <div>
       <ScoreBoard score={score} bestScore={bestScore} />
       <Reset score={score} reset={restart} />
-      <CardDeck
-        onClick={updateScore}
-        selected={(index) => updateSelected(index)}
-      />
+      <CardDeck selected={(index) => updateSelected(index)} />
     </div>
   );
 }

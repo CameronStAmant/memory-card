@@ -3,7 +3,6 @@ import './Card.css';
 
 function Card(props) {
   const clicked = () => {
-    props.onClick();
     props.selected(props.index);
   };
   return (
